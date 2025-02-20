@@ -8,9 +8,7 @@ Large Language Models (LLMs) like GPT-4 (ChatGPT), AskyourPDF, and Unstract have
 
 ## Python Requirements:
 cv2
-
 pytesseract
-
 pandas
 
 ## How to Run:
