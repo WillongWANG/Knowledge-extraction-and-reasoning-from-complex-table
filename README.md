@@ -6,3 +6,11 @@ Large Language Models (LLMs) like GPT-4 (ChatGPT), AskyourPDF, and Unstract have
 
 [Knowledge extraction tools](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/knowledge%20extraction%20tools.pdf) collects some knowledge extraction tools, including Document Parser supporting PDF (some support extractions of tables in PDF for LLM), OCR-based Document Parser supporting PDF, Layout Analysis, and other types of tools.
 
+## Python Requirements:
+cv2
+pytesseract
+pandas
+
+## How to Run:
+python code.py
+
