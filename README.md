@@ -1,4 +1,4 @@
-# Knowledge-extraction-from-complex-table
+# Knowledge extraction from complex table
 
 Large Language Models (LLMs) like GPT-4 (ChatGPT), AskyourPDF, and Unstract have demonstrated notable capabilities in extracting and understanding information from tables in raw PDF. However, __complex tables__ often contain various advanced features such as multiple column items (columns that span more than one field), merged cells (span multiple rows or columns), parenthetical explanations, and superscripts with corresponding footnotes or annotations, all of which pose significant challenges for table extraction and understanding. These features demand a high level of precision and contextual awareness from extraction tools. 
 
