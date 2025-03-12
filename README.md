@@ -15,5 +15,5 @@ cv2
 <br>pandas
 
 ## How to Run:
-python code.py
+···python code.py···
 
