@@ -35,12 +35,12 @@ In the report, the prompts are designed in a zero-shot style, such as ```"Summar
 To address this limitation, I further adopt few-shot and chain-of-thought (COT) prompting to investigate whether the performance of GPT-4o could be improved in table understanding and reasoning tasks, using the sample table shown above.
 
 [Few-shot](https://arxiv.org/pdf/2012.15723) for knowledge extraction:  
-one-shot  
+1. one-shot  
 The answers to the following three questions correspond to cell located in the same row as the demostration, the same column as the demostration, and within a merged cell, respectively (the third question was incorrectly answered by GPT-4o in a zero-shot style in the original report). The first two answers are correct, while the third one is still incorrect.   
 ![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/1.png)  
 ![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/2.png)  
 ![]()  
-two-shot  
+2. two-shot  
 The answer corresponding to cell in the same row as the input is also answered correctly.  
 ![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/3.png)
 
