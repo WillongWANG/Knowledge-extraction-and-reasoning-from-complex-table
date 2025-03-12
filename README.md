@@ -50,8 +50,8 @@ The answer corresponding to cell in the same row as the input is also answered c
 
 ![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/3.png)
 
-[zero-shot COT](https://arxiv.org/pdf/2205.11916) for reasoning:  
-task-agnostic and cheap  
+[Zero-shot COT](https://arxiv.org/pdf/2205.11916) for reasoning:  
+Task-agnostic and cheap  
 
 ![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/4.png)  
 
@@ -60,7 +60,7 @@ It seems there’s no need to follow the two-step approach outlined in the origi
 
 ![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/1.pic.jpg)
 
-[few-shot COT](https://arxiv.org/pdf/2201.11903) for reasoning:  
+[Few-shot COT](https://arxiv.org/pdf/2201.11903) for reasoning:  
 It can improve OOD generalization.  
 
 ![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/5.png)  
@@ -81,7 +81,7 @@ As mentioned in [Rethinking the Role of Demonstrations: What Makes In-Context Le
 1. Using demonstrations significantly outperforms the no-demonstration method. Even with small k (k = 4), model performance doesn’t increase much as k increases when k ≥ 8, both with gold labels and random labels.  
 2. Ground truth demonstrations are not required — replacing labels randomly in the demonstrations barely affects performance on a range of classification and multi-choice tasks.
 3. In-distribution inputs and conditioning on the label space in the demonstrations contribute substantially to performance gains.
-4. removing inputs instead of using OOD inputs, or removing labels instead of using random English words is significantly worse, indicating that keeping the format of the input-label pairs is key.
+4. Removing inputs instead of using OOD inputs, or removing labels instead of using random English words is significantly worse, indicating that keeping the format of the input-label pairs is key.
 
 Therefore, to better leverage **few-shot** prompts, we need to explore and adopt the input distribution, label space, and the format of the input-label pairs related to table understanding in **GPT-4o** training data. Additionally, table understanding is a more complex generation task, involving extracting and reasoning based on unstructured input files. This task differs from the classification tasks addressed in the original paper and is somewhat not the same as in-context learning.
 
