@@ -1,6 +1,6 @@
 # Knowledge extraction from complex table
 
-Large Language Models (LLMs) like GPT-4 (ChatGPT), AskyourPDF, and Unstract have demonstrated notable capabilities in extracting and understanding information from tables in raw PDF. However, __complex tables__ often contain various advanced features such as multiple column items (columns that span more than one field), merged cells (span multiple rows or columns), parenthetical explanations, and superscripts with corresponding footnotes or annotations, all of which pose significant challenges for table extraction and understanding. These features demand a high level of precision and contextual awareness from extraction tools. 
+Large Language Models (LLMs) like **GPT-4 (ChatGPT)**, **AskyourPDF**, and **Unstract** have demonstrated notable capabilities in extracting and understanding information from tables in raw PDF. However, __complex tables often contain various advanced features such as multiple column items (columns that span more than one field), merged cells (span multiple rows or columns), parenthetical explanations, and superscripts with corresponding footnotes or annotations__, all of which pose significant challenges for table extraction and understanding. These features demand a high level of precision and contextual awareness from extraction tools. 
 
 [Final Report on Knowledge Extraction](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/Final%20Report%20on%20Knowledge%20Extraction.pdf) evaluates the performance of several LLMs in table knowledge extraction and understanding. Recognizing the inherent limitations of LLMs in processing unstructured table data, the report introduces a preprocessing pipeline that utilizes Optical Character Recognition and rule-based methods to reconstruct tables into structured data formats, aiming to improve the accuracy and reliability of LLMs when handling tabular content. The code is in [code.py](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/code.py) based on screenshot table images.
 
@@ -13,13 +13,13 @@ Follow the code through four main steps, handling each output csv in each step a
 3. Merge Text Blocks into Cells Based on Column Distance  
 4. Reconstruct and Output the Original Table
    
-The final result will be an organized table of your original table image saved as ```organized_table.csv```, effectively addressing challenges such as multi-field columns, merged cells, and superscripts referencing footnotes or annotations in complex tables.
+The final result will be an organized table of your original table image saved as ```organized_table.csv```, **effectively addressing challenges such as multi-field columns, merged cells, and superscripts referencing footnotes or annotations in complex tables.**
    
-[Knowledge extraction tools](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/Knowledge%20extraction%20tools.pdf) collects some knowledge extraction tools, including Document Parser supporting PDF (some support extractions of tables in PDF for LLM), OCR-based Document Parser supporting PDF, Layout Analysis, and other types of tools.
+Additionally, [Knowledge extraction tools](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/Knowledge%20extraction%20tools.pdf) collects some knowledge extraction tools, including Document Parser supporting PDF (some support extractions of tables in PDF for LLM), OCR-based Document Parser supporting PDF, Layout Analysis, and other types of tools.
 
 # Improvements
 
-I further designed few-shot and chain-of-thought (COT) prompts to test the ability of LLMs to perform table information extraction, understanding, and reasoning tasks. Langchain...
+I further designed **few-shot** and **chain-of-thought (COT)** prompts to test the ability of LLMs to perform table information extraction, understanding, and reasoning tasks. Langchain...
 
 ## Python Requirements:
 cv2
@@ -32,20 +32,20 @@ python code.py
 ```
 
 ## Prompt strategies  
-In the report, the prompts are designed in a zero-shot style, such as ```"Summarize the ways to save money"``` and ```"I have a Personal Integrated Account, how much does it cost me to have a cashier's check?"```. The results reveal that while LLMs demonstrate strong abilities in locating and summarizing information, they fall short in understanding and reasoning tasks involving tables.
+In the report, the prompts are designed in a **zero-shot** style, such as ```"Summarize the ways to save money"``` and ```"I have a Personal Integrated Account, how much does it cost me to have a cashier's check?"```. The results reveal that while LLMs demonstrate strong abilities in locating and summarizing information, they fall short in understanding and reasoning tasks involving tables.
 
-To address this limitation, I further adopt few-shot and chain-of-thought (COT) prompting to investigate whether the performance of GPT-4o could be improved in table understanding and reasoning tasks, using the sample table shown above.
+To address this limitation, I further adopt **few-shot** and **chain-of-thought (COT)** prompting to investigate whether the performance of GPT-4o could be improved in table understanding and reasoning tasks, using the sample table shown above.
 
 [Few-shot](https://arxiv.org/pdf/2012.15723) for knowledge extraction:  
 
-1. one-shot  
-The answers to the following three questions correspond to cell located in the same row as the demostration, the same column as the demostration, and within a merged cell, respectively (the third question was incorrectly answered by GPT-4o in a zero-shot style in the original report). The first two answers are correct, while the third one is still incorrect.
+**1. one-shot**
+The answers to the following three questions correspond to cell located in the same row as the demostration, the same column as the demostration, and within a merged cell, respectively (the third question was incorrectly answered by **GPT-4o** in a **zero-shot** style in the original report). The first two answers are correct, while the third one is still incorrect.
  
 ![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/1.png)  
 ![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/2.png)  
 ![]()
 
-3. two-shot  
+**2. two-shot**  
 The answer corresponding to cell in the same row as the input is also answered correctly.
 
 ![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/3.png)
@@ -73,7 +73,7 @@ Answering the following question requires a different footnote than the one used
 
 The reasoning chain is also correct.
 
-It seems that COT helps the LLM reason to arrive at the correct answer. However, further testing is needed in more complex situations, such as multi-field columns and merged cells.
+It seems that **COT** helps the LLM reason to arrive at the correct answer. However, further testing is needed in more complex situations, such as multi-field columns and merged cells.
 
 ### Discussions
 
@@ -83,7 +83,7 @@ As mentioned in [Rethinking the Role of Demonstrations: What Makes In-Context Le
 3. In-distribution inputs and conditioning on the label space in the demonstrations contribute substantially to performance gains.
 4. removing inputs instead of using OOD inputs, or removing labels instead of using random English words is significantly worse, indicating that keeping the format of the input-label pairs is key.
 
-Therefore, to better leverage few-shot prompts, we need to explore and adopt the input distribution, label space, and the format of the input-label pairs related to table understanding in GPT-4o training data. Additionally, table understanding is a more complex generation task, involving extracting and reasoning based on unstructured input files. This task differs from the classification tasks addressed in the original paper and is somewhat not the same as in-context learning.
+Therefore, to better leverage **few-shot** prompts, we need to explore and adopt the input distribution, label space, and the format of the input-label pairs related to table understanding in **GPT-4o** training data. Additionally, table understanding is a more complex generation task, involving extracting and reasoning based on unstructured input files. This task differs from the classification tasks addressed in the original paper and is somewhat not the same as in-context learning.
 
 #### Possible future directions
 
