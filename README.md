@@ -37,28 +37,40 @@ In the report, the prompts are designed in a zero-shot style, such as ```"Summar
 To address this limitation, I further adopt few-shot and chain-of-thought (COT) prompting to investigate whether the performance of GPT-4o could be improved in table understanding and reasoning tasks, using the sample table shown above.
 
 [Few-shot](https://arxiv.org/pdf/2012.15723) for knowledge extraction:  
+
 1. one-shot  
-The answers to the following three questions correspond to cell located in the same row as the demostration, the same column as the demostration, and within a merged cell, respectively (the third question was incorrectly answered by GPT-4o in a zero-shot style in the original report). The first two answers are correct, while the third one is still incorrect.   
+The answers to the following three questions correspond to cell located in the same row as the demostration, the same column as the demostration, and within a merged cell, respectively (the third question was incorrectly answered by GPT-4o in a zero-shot style in the original report). The first two answers are correct, while the third one is still incorrect.
+ 
 ![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/1.png)  
 ![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/2.png)  
-![]()  
-2. two-shot  
-The answer corresponding to cell in the same row as the input is also answered correctly.  
+![]()
+
+3. two-shot  
+The answer corresponding to cell in the same row as the input is also answered correctly.
+
 ![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/3.png)
 
 [zero-shot COT](https://arxiv.org/pdf/2205.11916) for reasoning:  
 task-agnostic and cheap  
+
 ![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/4.png)  
+
 Surprisingly, it produced the correct answer and recognized the footnotes simply by adding ```"Let's think step by step"```!  
 It seems there’s no need to follow the two-step approach outlined in the original paper — it managed to succeed in just one step.  
+
 ![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/1.pic.jpg)
 
 [few-shot COT](https://arxiv.org/pdf/2201.11903) for reasoning:  
 It can improve OOD generalization.  
+
 ![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/5.png)  
+
 The reasoning chain is correct, but it’s somewhat like cheating since both questions share the same footnotes.  
+
 Answering the following question requires a different footnote than the one used in the demonstration.  
+
 ![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/6.png)  
+
 The reasoning chain is also correct.
 
 It seems that COT helps the LLM reason to arrive at the correct answer. However, further testing is needed in more complex situations, such as multi-field columns and merged cells.
