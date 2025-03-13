@@ -77,7 +77,7 @@ It seems that **COT** helps the LLM reason to arrive at the correct answer. Howe
 
 ### Discussions
 
-As mentioned in [Rethinking the Role of Demonstrations: What Makes In-Context Learning Work?](https://arxiv.org/pdf/2202.12837), the findings are as follows:  
+As mentioned in [Rethinking the Role of Demonstrations: What Makes In-Context Learning Work?](https://arxiv.org/pdf/2202.12837), the factors influencing model performance in **few-shot** learning are as follows:
 1. Using demonstrations significantly outperforms the no-demonstration method. Even with small k (k = 4), model performance doesn’t increase much as k increases when k ≥ 8, both with gold labels and random labels.  
 2. Ground truth demonstrations are not required — replacing labels randomly in the demonstrations barely affects performance on a range of classification and multi-choice tasks.
 3. In-distribution inputs and conditioning on the label space in the demonstrations contribute substantially to performance gains.
