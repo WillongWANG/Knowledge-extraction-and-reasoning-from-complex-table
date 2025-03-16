@@ -34,7 +34,7 @@ pypdf
 python code.py
 ```
 ```
-python document.py # using LangChain’s PyPDFLoader to extract information from tables
+python document.py                                                                               # using LangChain’s PyPDFLoader to extract information from tables
 ```
 
 
