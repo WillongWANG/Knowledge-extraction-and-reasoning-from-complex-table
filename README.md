@@ -43,8 +43,6 @@ The answers to the following three questions correspond to cell located in the s
  
 ![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/1.png)  
 ![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/2.png)  
-Based on the uploaded PDF, what is the charge of issuing/repurchasing a cashier's order for HSBC One holder? The answer is HK$60.
-So what is the charge of issuing/repurchasing a cashier's order for Personal Integrated Account? The answer is
 ![]()
 
 **2. two-shot**  
