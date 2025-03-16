@@ -47,7 +47,8 @@ The first two answers are correct, but the third answer is sometimes correct and
 ![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/11.png)
 ![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/12.png)
 
-The following two questions are the same but with different demonstrations: the demonstration for the first question is the cell (HK$60) to the right of the answer cell, while the demonstration for the second question is the cell two cells to the right of the answer cell. The answer corresponds to cell located **within a merged cell** (the question was incorrectly answered (HK$60) by **GPT-4o** in a **zero-shot** style in the original report).   
+The following two questions are the same but with different demonstrations: the demonstration for the first question is the cell (HK$60) to the right of the answer cell, while the demonstration for the second question is the cell two cells to the right of the answer cell.   
+The answer corresponds to cell located **within a merged cell** (the question was incorrectly answered (HK$60) by **GPT-4o** in a **zero-shot** style in the original report).   
 The second answer is incorrect (HK$60), and even if the first answer is correct, it might be because the demonstration helped eliminate the wrong answer.
 
 ![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/13.png)
