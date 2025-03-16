@@ -39,11 +39,19 @@ To address this limitation, I further adopt **few-shot** and **chain-of-thought 
 [Few-shot](https://arxiv.org/pdf/2012.15723) for knowledge extraction:  
 
 **1. one-shot**  
-The answers to the following three questions correspond to cell located in the same row as the demostration, the same column as the demostration, and **within a merged cell**, respectively (the third question was incorrectly answered by **GPT-4o** in a **zero-shot** style in the original report). The first two answers are correct, while the third one is still incorrect.
+The answers to the following three questions correspond to cell located in the same row as the demostration, the same column as the demostration, different row and column from the demostration, respectively.   
+The first two answers are correct, but the third answer is sometimes correct and sometimes incorrect, indicating that the LLM still has limitations in accurately identifying the relative row and column positions of cells.
  
 ![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/1.png)  
 ![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/2.png)  
-![]()
+![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/11.png)
+![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/12.png)
+
+The following two questions are the same but with different demonstrations: the demonstration for the first question is the cell (HK$60) to the right of the answer cell, while the demonstration for the second question is the cell two cells to the right of the answer cell. The answer corresponds to cell located **within a merged cell** (the question was incorrectly answered (HK$60) by **GPT-4o** in a **zero-shot** style in the original report).   
+The second answer is incorrect (HK$60), and even if the first answer is correct, it might be because the demonstration helped eliminate the wrong answer.
+
+![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/13.png)
+![](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/pics/14.png)
 
 **2. two-shot**  
 The answer corresponding to cell in the same row as the input is also answered correctly.
