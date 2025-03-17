@@ -20,7 +20,7 @@ Additionally, [Knowledge extraction tools](https://github.com/WillongWANG/Knowle
 # Improvements
 
 I further designed **few-shot** and **chain-of-thought (COT)** prompts to test the ability of LLMs to perform table information extraction, understanding, and reasoning tasks.  
-Additionally, the lines extracted by **LangChain’s PyPDFLoader** are in the same order as the original PDF, achieving a **100%** recognition accuracy for the aforementioned table PDF, including special symbols and superscripts.
+Additionally, the lines extracted by **LangChain’s PyPDFLoader** are in the same order as the original PDF, achieving a **100%** recognition accuracy for the aforementioned table PDF, including special symbols and superscripts. But the lines **do not** indicate coordinates of characters which are key for reconstructing tables.
 
 ## Python Requirements:
 cv2
