@@ -20,7 +20,7 @@ Additionally, [Knowledge extraction tools](https://github.com/WillongWANG/Knowle
 # Improvements
 
 I further designed **few-shot** and **chain-of-thought (COT)** prompts to test the ability of LLMs to perform table information extraction, understanding, and reasoning tasks.  
-Langchain...The lines extracted by **LangChain’s PyPDFLoader** are in the same order as the original PDF, achieving a **100%** recognition accuracy for the aforementioned table PDF, including special symbols and superscripts.
+Additionally, the lines extracted by **LangChain’s PyPDFLoader** are in the same order as the original PDF, achieving a **100%** recognition accuracy for the aforementioned table PDF, including special symbols and superscripts.
 
 ## Python Requirements:
 cv2
@@ -36,7 +36,6 @@ python code.py
 ```
 python document.py      # using LangChain’s PyPDFLoader to extract information from tables
 ```
-
 
 ## Prompt strategies  
 In the report, the prompts are designed in a **zero-shot** style, such as ```"Summarize the ways to save money"``` and ```"I have a Personal Integrated Account, how much does it cost me to have a cashier's check?"```. The results reveal that while LLMs demonstrate strong abilities in locating and summarizing information, they fall short in understanding and reasoning tasks involving tables.
