@@ -13,7 +13,7 @@ Follow the code through four main steps, handling each output csv in each step a
 3. Merge Text Blocks into Cells Based on Column Distance  
 4. Reconstruct and Output the Original Table
    
-The final result will be an organized table of your original table image saved as ```organized_table.csv```, **effectively addressing challenges such as multi-field columns, merged cells, and superscripts referencing footnotes or annotations in complex tables.**
+The final result will be an organized table of your original table image saved as ```organized_table.csv```, **effectively addressing challenges such as multi-field columns, merged cells, and superscripts referencing footnotes or annotations in complex tables, which LLMs fail to recognize.**
    
 Additionally, [Knowledge extraction tools](https://github.com/WillongWANG/Knowledge-extraction-from-complex-table/blob/main/Knowledge%20extraction%20tools.pdf) collects some knowledge extraction tools, including Document Parser supporting PDF (some support extractions of tables in PDF for LLM), OCR-based Document Parser supporting PDF, Layout Analysis, and other types of tools.
 
